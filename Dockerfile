@@ -24,8 +24,8 @@ RUN rm /bin/sh && ln -s /bin/bash /bin/sh
 
 RUN source ~/.bashrc && \
     tnvm install "alinode-v$ALINODE_VERSION" && \
-    tnvm use "alinode-v$ALINODE_VERSION"
-RUN npm install -g agentx
+    tnvm use "alinode-v$ALINODE_VERSION" && \
+    npm install -g agentx
 RUN git clone https://github.com/aliyun-node/commands.git /usr/local/src/alinode_commands
 
 RUN apt-get remove -y cmake pkg-config libglib2.0-dev make gcc g++ && \
