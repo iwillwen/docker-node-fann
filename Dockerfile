@@ -21,8 +21,8 @@ RUN bash /root/.tnvm/tnvm.sh install "alinode-v$ALINODE_VERSION" && \
 RUN npm install -g agentx
 RUN git clone https://github.com/aliyun-node/commands.git /usr/local/src/alinode_commands
 
-COPY docker-entrypoint.sh /tmp/
-ENTRYPOINT ["/tmp/docker-entrypoint.sh"]
+COPY docker-entrypoint.sh /
+ENTRYPOINT ["/docker-entrypoint.sh"]
 
 RUN apt-get remove -y cmake pkg-config libglib2.0-dev make gcc g++ && \
     apt-get autoremove -y && \
