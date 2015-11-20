@@ -22,7 +22,7 @@ RUN npm install -g agentx
 RUN git clone https://github.com/aliyun-node/commands.git /usr/local/src/alinode_commands
 
 
-COPY docker-entrypoint.sh /usr/src
+ADD docker-entrypoint.sh /usr/src
 ENTRYPOINT ["/usr/src/docker-entrypoint.sh"]
 
 RUN apt-get remove -y cmake pkg-config libglib2.0-dev make gcc g++ && \
