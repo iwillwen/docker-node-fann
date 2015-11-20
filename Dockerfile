@@ -20,8 +20,8 @@ RUN wget -qO- https://raw.githubusercontent.com/aliyun-node/tnvm/master/install.
 COPY docker-entrypoint.sh /
 RUN bash /docker-entrypoint.sh
 
-RUN tnvm install "alinode-v$ALINODE_VERSION" && \
-    tnvm use "alinode-v$ALINODE_VERSION"
+RUN bash /root/.tnvm/tnvm.sh install "alinode-v$ALINODE_VERSION" && \
+        bash /root/.tnvm/tnvm.sh use "alinode-v$ALINODE_VERSION"
 RUN npm install -g agentx
 RUN git clone https://github.com/aliyun-node/commands.git /usr/local/src/alinode_commands
 
